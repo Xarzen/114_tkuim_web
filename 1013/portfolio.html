@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>雷天佑 - 個人作品集</title>
+  
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <style>
+    /* 自訂樣式 - 卡片 hover 效果 */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    /* 平滑滾動 */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* 作品集卡片描述初始隱藏 */
+    .portfolio-description {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 導航列 -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="#">雷天佑</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">首頁</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">關於</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">作品</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">聯絡</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section (首頁區塊) -->
+  <section id="home" class="bg-light py-5">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-8 mx-auto text-center">
+          <h1 class="display-1 fw-bold text-primary mb-4">雷天佑</h1>
+          <p class="lead fs-3 mb-4">你好我是淡江大學資管4B雷天佑</p>
+          <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+            <button class="btn btn-primary btn-lg px-4" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+              <i class="bi bi-person-circle me-2"></i>認識我
+            </button>
+            <button class="btn btn-outline-primary btn-lg px-4" onclick="document.getElementById('portfolio').scrollIntoView({behavior: 'smooth'})">
+              <i class="bi bi-folder2-open me-2"></i>查看作品
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 關於我 (About Section) -->
+  <section id="about" class="py-5">
+    <div class="container py-4">
+      <h2 class="text-center mb-5 display-4 fw-bold text-primary">關於我</h2>
+      <div class="row align-items-center">
+        <div class="col-md-4 text-center mb-4 mb-md-0">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/QWER_MEMBER_FANSIGN.jpg" 
+               class="img-fluid rounded-circle shadow" 
+               alt="個人照片"
+               style="max-width: 300px;">
+        </div>
+        <div class="col-md-8">
+          <h3 class="fw-bold fs-2 text-primary mb-3">雷天佑</h3>
+          <p class="fs-5 text-secondary mb-3">淡江大學資訊管理學系 4B</p>
+          <p class="fs-6 lh-lg">
+            我是雷天佑，目前正在淡大資管力拼畢業，平時興趣是關注3C數碼界相關新產品與新聞，以及關注遊戲界大小事，以下是我的作品集。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技能展示 (Skills Section) -->
+  <section id="skills" class="bg-light py-5">
+    <div class="container py-4">
+      <h2 class="text-center mb-5 display-4 fw-bold text-primary">技能專長</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 text-center border-0 shadow">
+            <div class="card-body p-4">
+              <img src="4703650.png" class="img-fluid mb-3" alt="網頁撰寫" style="max-width: 120px;">
+              <h4 class="card-title fw-bold text-primary">網頁撰寫</h4>
+              <p class="card-text text-secondary">基本網頁設計能力</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 text-center border-0 shadow">
+            <div class="card-body p-4">
+              <img src="1853614-200.png" class="img-fluid mb-3" alt="模型訓練" style="max-width: 120px;">
+              <h4 class="card-title fw-bold text-primary">模型訓練</h4>
+              <p class="card-text text-secondary">Yolo影像辨識模型訓練</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 text-center border-0 shadow">
+            <div class="card-body p-4">
+              <img src="615075.png" class="img-fluid mb-3" alt="團體共事" style="max-width: 120px;">
+              <h4 class="card-title fw-bold text-primary">團體共事</h4>
+              <p class="card-text text-secondary">能配合團體要求完成並配合各項事務</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品集 (Portfolio Section) -->
+  <section id="portfolio" class="py-5">
+    <div class="container py-4">
+      <h2 class="text-center mb-5 display-4 fw-bold text-primary">我的作品</h2>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow">
+            <img src="html.png" class="card-img-top" alt="基本網頁">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">基本網頁</h5>
+              <p class="portfolio-description text-secondary">此為一個基本的網頁設計</p>
+              <button class="btn btn-primary" onclick="toggleDescription(this)">
+                <i class="bi bi-eye me-1"></i>查看詳情
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow">
+            <img src="abtm.png" class="card-img-top" alt="自我介紹">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">自我介紹</h5>
+              <p class="portfolio-description text-secondary">這是一個自我介紹的網頁</p>
+              <button class="btn btn-primary" onclick="toggleDescription(this)">
+                <i class="bi bi-eye me-1"></i>查看詳情
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 border-0 shadow">
+            <img src="yolo.png" class="card-img-top" alt="YOLO">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">YOLO</h5>
+              <p class="portfolio-description text-secondary">這是一個YOLO訓練模型的訓練結果</p>
+              <button class="btn btn-primary" onclick="toggleDescription(this)">
+                <i class="bi bi-eye me-1"></i>查看詳情
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 聯絡表單 (Contact Section) -->
+  <section id="contact" class="bg-light py-5">
+    <div class="container py-4">
+      <h2 class="text-center mb-5 display-4 fw-bold text-primary">聯絡我</h2>
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <div class="card border-0 shadow">
+            <div class="card-body p-4">
+              <form>
+                <div class="mb-3">
+                  <label for="name" class="form-label fw-bold">姓名</label>
+                  <input type="text" class="form-control" id="name" placeholder="請輸入您的姓名" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label fw-bold">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="example@email.com" required>
+                </div>
+                <div class="mb-3">
+                  <label for="subject" class="form-label fw-bold">主旨</label>
+                  <input type="text" class="form-control" id="subject" placeholder="請輸入主旨" required>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label fw-bold">訊息</label>
+                  <textarea class="form-control" id="message" rows="5" placeholder="請輸入您的訊息" required></textarea>
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="bi bi-send me-2"></i>送出
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (頁尾) -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-3">
+          <h5 class="fw-bold mb-3">關注我</h5>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="https://www.youtube.com/@l7ny0" target="_blank" class="text-white fs-3" title="Youtube">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://www.facebook.com/raymond.lei.148" target="_blank" class="text-white fs-3" title="Facebook">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/l7ny0/" target="_blank" class="text-white fs-3" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-12 text-center">
+          <p class="mb-0">&copy; 2025 我的網站. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JavaScript Bundle (包含 Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- 自訂 JavaScript -->
+  <script>
+    // 切換作品集描述顯示/隱藏
+    function toggleDescription(button) {
+      const card = button.closest('.card-body');
+      const description = card.querySelector('.portfolio-description');
+      
+      if (description.style.display === 'none' || description.style.display === '') {
+        description.style.display = 'block';
+        button.innerHTML = '<i class="bi bi-eye-slash me-1"></i>隱藏詳情';
+        button.classList.remove('btn-primary');
+        button.classList.add('btn-secondary');
+      } else {
+        description.style.display = 'none';
+        button.innerHTML = '<i class="bi bi-eye me-1"></i>查看詳情';
+        button.classList.remove('btn-secondary');
+        button.classList.add('btn-primary');
+      }
+    }
+    
+    // 導航列連結高亮
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
