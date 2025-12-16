@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="search-box">
+          <input type="text" id="city-input" placeholder="Search City (e.g. Taipei)..." />
+          <button id="search-btn" class="icon-btn">🔍</button>
+        </div>
+
+        <div id="weather-display" class="weather-card hidden">
+          <h2 id="city-name">City Name</h2>
+          <div class="temperature" id="current-temp">--°</div>
+          <div class="condition" id="current-condition">--</div>
+          
+          <div class="metrics">
+            <div class="metric">
+              <span class="metric-value">💧 <span id="humidity">--</span>%</span>
+              <span class="metric-label">Humidity</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">💨 <span id="wind-speed">--</span> km/h</span>
+              <span class="metric-label">Wind</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="loading" class="loading hidden">Loading...</div>
+        <div id="error-msg" class="loading hidden" style="color: #ff6b6b"></div>
+
+        <a href="./details.html" class="nav-link" id="forecast-link">View 7-Day Forecast →</a>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

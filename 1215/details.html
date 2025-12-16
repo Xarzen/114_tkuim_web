@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7-Day Forecast</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container" style="justify-content: flex-start;">
+            <div class="header-row">
+                <button id="back-btn" class="back-btn">←</button>
+                <h2>7-Day Forecast</h2>
+            </div>
+
+            <h3 id="forecast-city" style="color: var(--text-secondary); font-weight: 400; margin-bottom: 20px;">--</h3>
+
+            <div id="forecast-list" class="forecast-list">
+                <!-- Forecast items will be injected here -->
+                <div class="loading">Loading Forecast...</div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script>
+        // Simple inline script to handle back button for now, or use main.js logic
+        document.getElementById('back-btn').addEventListener('click', () => {
+            window.location.href = './index.html';
+        });
+    </script>
+</body>
+
+</html>
