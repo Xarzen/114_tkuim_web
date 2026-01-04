@@ -1,66 +1,65 @@
-const Player = require('../models/Player');
+const Coach = require('../models/Coach');
 
-// @desc    取得所有選手
-// @route   GET /api/players
+// @desc    取得所有教練
+// @route   GET /api/coaches
 // @access  Public
-exports.getAllPlayers = async (req, res) => {
+exports.getAllCoaches = async (req, res) => {
   try {
-    const players = await Player.find().sort({ createdAt: 1 });
+    const coaches = await Coach.find().sort({ createdAt: 1 });
     res.json({
       success: true,
-      count: players.length,
-      data: players
+      count: coaches.length,
+      data: coaches
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: '取得選手資料失敗',
+      message: '取得教練資料失敗',
       error: error.message
     });
   }
 };
 
-// @desc    取得單一選手
-// @route   GET /api/players/:id
+// @desc    取得單一教練
+// @route   GET /api/coaches/:id
 // @access  Public
-exports.getPlayerById = async (req, res) => {
+exports.getCoachById = async (req, res) => {
   try {
-    const player = await Player.findById(req.params.id);
+    const coach = await Coach.findById(req.params.id);
     
-    if (!player) {
+    if (!coach) {
       return res.status(404).json({
         success: false,
-        message: '找不到該選手'
+        message: '找不到該教練'
       });
     }
     
     res.json({
       success: true,
-      data: player
+      data: coach
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: '取得選手資料失敗',
+      message: '取得教練資料失敗',
       error: error.message
     });
   }
 };
 
-// @desc    新增選手
-// @route   POST /api/players
+// @desc    新增教練
+// @route   POST /api/coaches
 // @access  Public
-exports.createPlayer = async (req, res) => {
+exports.createCoach = async (req, res) => {
   try {
-    const player = await Player.create(req.body);
+    const coach = await Coach.create(req.body);
     
     res.status(201).json({
       success: true,
-      message: '選手新增成功',
-      data: player
+      message: '教練新增成功',
+      data: coach
     });
   } catch (error) {
-    // 處理重複的 gameId
     if (error.code === 11000) {
       return res.status(400).json({
         success: false,
@@ -68,7 +67,6 @@ exports.createPlayer = async (req, res) => {
       });
     }
     
-    // 處理驗證錯誤
     if (error.name === 'ValidationError') {
       const messages = Object.values(error.errors).map(err => err.message);
       return res.status(400).json({
@@ -80,37 +78,37 @@ exports.createPlayer = async (req, res) => {
     
     res.status(500).json({
       success: false,
-      message: '新增選手失敗',
+      message: '新增教練失敗',
       error: error.message
     });
   }
 };
 
-// @desc    更新選手
-// @route   PUT /api/players/:id
+// @desc    更新教練
+// @route   PUT /api/coaches/:id
 // @access  Public
-exports.updatePlayer = async (req, res) => {
+exports.updateCoach = async (req, res) => {
   try {
-    const player = await Player.findByIdAndUpdate(
+    const coach = await Coach.findByIdAndUpdate(
       req.params.id,
       req.body,
       {
-        new: true, // 回傳更新後的資料
-        runValidators: true // 執行驗證
+        new: true,
+        runValidators: true
       }
     );
     
-    if (!player) {
+    if (!coach) {
       return res.status(404).json({
         success: false,
-        message: '找不到該選手'
+        message: '找不到該教練'
       });
     }
     
     res.json({
       success: true,
-      message: '選手資料更新成功',
-      data: player
+      message: '教練資料更新成功',
+      data: coach
     });
   } catch (error) {
     if (error.name === 'ValidationError') {
@@ -124,35 +122,35 @@ exports.updatePlayer = async (req, res) => {
     
     res.status(500).json({
       success: false,
-      message: '更新選手資料失敗',
+      message: '更新教練資料失敗',
       error: error.message
     });
   }
 };
 
-// @desc    刪除選手
-// @route   DELETE /api/players/:id
+// @desc    刪除教練
+// @route   DELETE /api/coaches/:id
 // @access  Public
-exports.deletePlayer = async (req, res) => {
+exports.deleteCoach = async (req, res) => {
   try {
-    const player = await Player.findByIdAndDelete(req.params.id);
+    const coach = await Coach.findByIdAndDelete(req.params.id);
     
-    if (!player) {
+    if (!coach) {
       return res.status(404).json({
         success: false,
-        message: '找不到該選手'
+        message: '找不到該教練'
       });
     }
     
     res.json({
       success: true,
-      message: '選手刪除成功',
-      data: player
+      message: '教練刪除成功',
+      data: coach
     });
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: '刪除選手失敗',
+      message: '刪除教練失敗',
       error: error.message
     });
   }

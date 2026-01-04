@@ -64,7 +64,7 @@ function Home() {
           2025 T1 戰隊選手介紹
         </h1>
         <p className="text-gray-300 text-lg drop-shadow-lg">
-          英雄聯盟傳奇戰隊 - 五冠王者陣容展示
+          英雄聯盟傳奇戰隊 - 六冠王者陣容展示
         </p>
       </div>
 

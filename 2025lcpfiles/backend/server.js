@@ -19,7 +19,9 @@ mongoose.connect(MONGODB_URI)
 
 // Routes
 const playerRoutes = require('./routes/playerRoutes');
+const coachRoutes = require('./routes/coachRoutes');
 app.use('/api/players', playerRoutes);
+app.use('/api/coaches', coachRoutes);
 
 // Root endpoint
 app.get('/', (req, res) => {
@@ -27,7 +29,8 @@ app.get('/', (req, res) => {
     message: '歡迎使用 T1 戰隊選手管理系統 API',
     version: '1.0.0',
     endpoints: {
-      players: '/api/players'
+      players: '/api/players',
+      coaches: '/api/coaches'
     }
   });
 });
