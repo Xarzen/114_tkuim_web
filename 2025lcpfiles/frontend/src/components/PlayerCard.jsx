@@ -9,11 +9,13 @@ function PlayerCard({ player, onDelete }) {
 
   return (
     <div className="card">
-      <div className="aspect-w-1 aspect-h-1">
+      {/* 照片區 - 居中顯示原始尺寸 */}
+      <div className="flex items-center justify-center bg-gray-900 p-6">
         <img
-          src={player.photoUrl || 'https://via.placeholder.com/400x400?text=Player'}
+          src={player.photoUrl || 'https://via.placeholder.com/300x300?text=Player'}
           alt={player.name}
-          className="w-full h-64 object-cover"
+          className="max-w-full h-auto rounded-lg shadow-lg"
+          style={{ maxHeight: '250px' }}
         />
       </div>
       

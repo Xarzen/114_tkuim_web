@@ -72,17 +72,17 @@ function PlayerDetail() {
       {/* 選手詳細資訊 */}
       <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
         <div className="md:flex">
-          {/* 照片區 */}
-          <div className="md:w-1/3">
+          {/* 照片區 - 緊湊寬度，照片原始尺寸 */}
+          <div className="md:w-auto flex-shrink-0 flex items-start justify-center bg-gray-900 p-4 md:p-6">
             <img
-              src={player.photoUrl || 'https://via.placeholder.com/400x400?text=Player'}
+              src={player.photoUrl || 'https://via.placeholder.com/300x300?text=Player'}
               alt={player.name}
-              className="w-full h-full object-cover"
+              className="max-w-full h-auto rounded-lg shadow-xl"
             />
           </div>
 
           {/* 資訊區 */}
-          <div className="md:w-2/3 p-8">
+          <div className="flex-1 p-8">
             <div className="flex justify-between items-start mb-4">
               <div>
                 <h1 className="text-3xl font-bold text-gray-800 mb-2">
