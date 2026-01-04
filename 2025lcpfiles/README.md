@@ -138,7 +138,7 @@ T1 是英雄聯盟史上最成功的戰隊，於 2025 年奪得第六座世界�
 
 ### 步驟 1：克隆專案
 ```bash
-git clone [您的 GitHub Repo URL]
+git clone [https://github.com/Xarzen/114_tkuim_web/tree/main/2025lcpfiles]
 cd 2025lcpfiles
 ```
 
@@ -267,4 +267,4 @@ npm run dev
 
 ## 專案展示
 
-- **Demo 影片**：[YouTube 連結]（5-8 分鐘）
+- **Demo 影片**：[https://youtu.be/ZYtuVxr_Mzs]
