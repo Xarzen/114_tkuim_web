@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { playerAPI } from '../services/api';
 
 function PlayerDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
   const [player, setPlayer] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -134,21 +136,23 @@ function PlayerDetail() {
               </div>
             )}
 
-            {/* 操作按鈕 */}
-            <div className="flex gap-4 pt-6 border-t border-gray-200">
-              <Link
-                to={`/edit/${player._id}`}
-                className="flex-1 bg-gray-800 text-white text-center py-3 rounded-lg hover:bg-gray-900 transition font-semibold"
-              >
-                編輯資料
-              </Link>
-              <button
-                onClick={handleDelete}
-                className="flex-1 bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition font-semibold"
-              >
-                刪除選手
-              </button>
-            </div>
+            {/* 操作按鈕（僅管理員可見） */}
+            {isAuthenticated && (
+              <div className="flex gap-4 pt-6 border-t border-gray-200">
+                <Link
+                  to={`/edit/${player._id}`}
+                  className="flex-1 bg-gray-800 text-white text-center py-3 rounded-lg hover:bg-gray-900 transition font-semibold"
+                >
+                  編輯資料
+                </Link>
+                <button
+                  onClick={handleDelete}
+                  className="flex-1 bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition font-semibold"
+                >
+                  刪除選手
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

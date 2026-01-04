@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 import CoachCard from '../components/CoachCard';
 
@@ -7,6 +8,7 @@ const CoachList = () => {
   const [coaches, setCoaches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     fetchCoaches();
@@ -56,15 +58,17 @@ const CoachList = () => {
         </p>
       </div>
 
-      {/* 新增按鈕 */}
-      <div className="mb-8 flex justify-end">
-        <Link
-          to="/coaches/add"
-          className="btn-primary"
-        >
-          新增教練
-        </Link>
-      </div>
+      {/* 新增按鈕（僅管理員可見） */}
+      {isAuthenticated && (
+        <div className="mb-8 flex justify-end">
+          <Link
+            to="/coaches/add"
+            className="btn-primary"
+          >
+            新增教練
+          </Link>
+        </div>
+      )}
 
       {coaches.length === 0 ? (
         <div className="text-center py-12">

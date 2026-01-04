@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 
 const CoachDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
   const [coach, setCoach] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -135,21 +137,23 @@ const CoachDetail = () => {
               </div>
             )}
 
-            {/* 操作按鈕 */}
-            <div className="flex flex-wrap gap-4 pt-6 border-t border-gray-700">
-              <Link
-                to={`/coaches/edit/${coach._id}`}
-                className="btn-primary"
-              >
-                編輯資料
-              </Link>
-              <button
-                onClick={() => setShowDeleteModal(true)}
-                className="bg-red-900 text-white px-6 py-2 rounded-lg hover:bg-red-800 transition-colors font-semibold shadow-lg"
-              >
-                刪除教練
-              </button>
-            </div>
+            {/* 操作按鈕（僅管理員可見） */}
+            {isAuthenticated && (
+              <div className="flex flex-wrap gap-4 pt-6 border-t border-gray-700">
+                <Link
+                  to={`/coaches/edit/${coach._id}`}
+                  className="btn-primary"
+                >
+                  編輯資料
+                </Link>
+                <button
+                  onClick={() => setShowDeleteModal(true)}
+                  className="bg-red-900 text-white px-6 py-2 rounded-lg hover:bg-red-800 transition-colors font-semibold shadow-lg"
+                >
+                  刪除教練
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

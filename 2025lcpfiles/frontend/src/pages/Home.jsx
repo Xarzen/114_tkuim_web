@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { playerAPI } from '../services/api';
+import { useAuth } from '../context/AuthContext';
 import PlayerCard from '../components/PlayerCard';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [players, setPlayers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     fetchPlayers();
@@ -68,13 +71,24 @@ function Home() {
         </p>
       </div>
 
+      {/* 新增按鈕（僅管理員可見） */}
+      {isAuthenticated && (
+        <div className="mb-8 flex justify-end">
+          <Link to="/add" className="btn-primary">
+            新增選手
+          </Link>
+        </div>
+      )}
+
       {/* 選手列表 */}
       {players.length === 0 ? (
         <div className="text-center py-12">
           <p className="text-gray-300 text-lg mb-4">目前還沒有選手資料</p>
-          <a href="/add" className="btn-primary inline-block">
-            新增第一位選手
-          </a>
+          {isAuthenticated && (
+            <Link to="/add" className="btn-primary inline-block">
+              新增第一位選手
+            </Link>
+          )}
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -83,6 +97,7 @@ function Home() {
               key={player._id}
               player={player}
               onDelete={handleDelete}
+              showActions={isAuthenticated}
             />
           ))}
         </div>

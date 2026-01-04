@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function PlayerCard({ player, onDelete }) {
+function PlayerCard({ player, onDelete, showActions = false }) {
   const handleDelete = () => {
     if (window.confirm(`確定要刪除選手「${player.name}」嗎？`)) {
       onDelete(player._id);
@@ -54,18 +54,22 @@ function PlayerCard({ player, onDelete }) {
           >
             查看詳情
           </Link>
-          <Link
-            to={`/edit/${player._id}`}
-            className="flex-1 bg-gray-800 text-white text-center py-2 rounded-lg hover:bg-gray-900 transition"
-          >
-            編輯
-          </Link>
-          <button
-            onClick={handleDelete}
-            className="flex-1 bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition"
-          >
-            刪除
-          </button>
+          {showActions && (
+            <>
+              <Link
+                to={`/edit/${player._id}`}
+                className="flex-1 bg-gray-800 text-white text-center py-2 rounded-lg hover:bg-gray-900 transition"
+              >
+                編輯
+              </Link>
+              <button
+                onClick={handleDelete}
+                className="flex-1 bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition"
+              >
+                刪除
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

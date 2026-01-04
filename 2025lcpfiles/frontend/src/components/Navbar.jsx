@@ -1,6 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 function Navbar() {
+  const { isAuthenticated, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
+
   return (
     <nav className="bg-gradient-to-r from-black to-red-600 text-white shadow-lg">
       <div className="container mx-auto px-4">
@@ -32,6 +41,22 @@ function Navbar() {
             >
               教練團隊
             </Link>
+            
+            {isAuthenticated ? (
+              <button
+                onClick={handleLogout}
+                className="bg-red-700 hover:bg-red-800 px-4 py-2 rounded-lg transition font-medium"
+              >
+                登出
+              </button>
+            ) : (
+              <Link
+                to="/login"
+                className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition font-medium"
+              >
+                管理員登入
+              </Link>
+            )}
           </div>
         </div>
       </div>
