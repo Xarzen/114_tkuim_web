@@ -20,7 +20,7 @@ function PlayerCard({ player, onDelete }) {
       <div className="p-6">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-bold text-gray-800">{player.name}</h3>
-          <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">
+          <span className="bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full">
             {player.position}
           </span>
         </div>
@@ -48,13 +48,13 @@ function PlayerCard({ player, onDelete }) {
         <div className="flex gap-2">
           <Link
             to={`/player/${player._id}`}
-            className="flex-1 bg-blue-600 text-white text-center py-2 rounded-lg hover:bg-blue-700 transition"
+            className="flex-1 bg-red-600 text-white text-center py-2 rounded-lg hover:bg-red-700 transition"
           >
             查看詳情
           </Link>
           <Link
             to={`/edit/${player._id}`}
-            className="flex-1 bg-green-600 text-white text-center py-2 rounded-lg hover:bg-green-700 transition"
+            className="flex-1 bg-gray-800 text-white text-center py-2 rounded-lg hover:bg-gray-900 transition"
           >
             編輯
           </Link>

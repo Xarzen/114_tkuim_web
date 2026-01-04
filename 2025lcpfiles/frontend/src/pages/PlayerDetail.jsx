@@ -52,7 +52,7 @@ function PlayerDetail() {
   if (error || !player) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+        <div className="bg-red-900/80 backdrop-blur-sm border border-red-500 text-white px-4 py-3 rounded mb-4 shadow-xl">
           {error || '找不到該選手'}
         </div>
         <Link to="/" className="btn-primary inline-block">
@@ -65,12 +65,12 @@ function PlayerDetail() {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* 返回按鈕 */}
-      <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6">
+      <Link to="/" className="inline-flex items-center text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg mb-6 shadow-lg">
         ← 返回選手列表
       </Link>
 
       {/* 選手詳細資訊 */}
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
         <div className="md:flex">
           {/* 照片區 */}
           <div className="md:w-1/3">
@@ -92,7 +92,7 @@ function PlayerDetail() {
                   {player.gameId}
                 </p>
               </div>
-              <span className="bg-blue-100 text-blue-800 text-lg font-semibold px-4 py-2 rounded-full">
+              <span className="bg-red-100 text-red-800 text-lg font-semibold px-4 py-2 rounded-full">
                 {player.position}
               </span>
             </div>
@@ -138,7 +138,7 @@ function PlayerDetail() {
             <div className="flex gap-4 pt-6 border-t border-gray-200">
               <Link
                 to={`/edit/${player._id}`}
-                className="flex-1 bg-green-600 text-white text-center py-3 rounded-lg hover:bg-green-700 transition font-semibold"
+                className="flex-1 bg-gray-800 text-white text-center py-3 rounded-lg hover:bg-gray-900 transition font-semibold"
               >
                 編輯資料
               </Link>

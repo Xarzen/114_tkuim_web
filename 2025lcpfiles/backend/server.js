@@ -24,7 +24,7 @@ app.use('/api/players', playerRoutes);
 // Root endpoint
 app.get('/', (req, res) => {
   res.json({ 
-    message: '歡迎使用 CFO 戰隊選手管理系統 API',
+    message: '歡迎使用 T1 戰隊選手管理系統 API',
     version: '1.0.0',
     endpoints: {
       players: '/api/players'

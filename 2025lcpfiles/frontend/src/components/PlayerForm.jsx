@@ -68,7 +68,7 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-8">
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-white rounded-lg shadow-2xl p-8">
       <h2 className="text-2xl font-bold mb-6 text-gray-800">
         {isEdit ? '編輯選手資料' : '新增選手'}
       </h2>

@@ -38,8 +38,8 @@ function Home() {
   if (loading) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <div className="text-center text-gray-600">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+        <div className="text-center text-white">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto mb-4"></div>
           載入中...
         </div>
       </div>
@@ -49,7 +49,7 @@ function Home() {
   if (error) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+        <div className="bg-red-900/80 backdrop-blur-sm border border-red-500 text-white px-4 py-3 rounded shadow-xl">
           {error}
         </div>
       </div>
@@ -60,18 +60,18 @@ function Home() {
     <div className="container mx-auto px-4 py-8">
       {/* 標題區 */}
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          2025 CFO 戰隊選手介紹
+        <h1 className="text-4xl font-bold text-white mb-4 drop-shadow-lg">
+          2025 T1 戰隊選手介紹
         </h1>
-        <p className="text-gray-600 text-lg">
-          英雄聯盟職業戰隊 - 戰力陣容完整展示
+        <p className="text-gray-300 text-lg drop-shadow-lg">
+          英雄聯盟傳奇戰隊 - 五冠王者陣容展示
         </p>
       </div>
 
       {/* 選手列表 */}
       {players.length === 0 ? (
         <div className="text-center py-12">
-          <p className="text-gray-500 text-lg mb-4">目前還沒有選手資料</p>
+          <p className="text-gray-300 text-lg mb-4">目前還沒有選手資料</p>
           <a href="/add" className="btn-primary inline-block">
             新增第一位選手
           </a>
