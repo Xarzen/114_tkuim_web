@@ -31,7 +31,6 @@ function Home() {
   const handleDelete = async (id) => {
     try {
       await playerAPI.deletePlayer(id);
-      // 重新載入選手列表
       fetchPlayers();
     } catch (err) {
       alert('刪除失敗：' + (err.message || '未知錯誤'));
@@ -61,7 +60,7 @@ function Home() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* 標題區 */}
+      {}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-white mb-4 drop-shadow-lg">
           2025 T1 戰隊選手介紹
@@ -71,7 +70,7 @@ function Home() {
         </p>
       </div>
 
-      {/* 新增按鈕（僅管理員可見） */}
+      {}
       {isAuthenticated && (
         <div className="mb-8 flex justify-end">
           <Link to="/add" className="btn-primary">
@@ -80,7 +79,7 @@ function Home() {
         </div>
       )}
 
-      {/* 選手列表 */}
+      {}
       {players.length === 0 ? (
         <div className="text-center py-12">
           <p className="text-gray-300 text-lg mb-4">目前還沒有選手資料</p>

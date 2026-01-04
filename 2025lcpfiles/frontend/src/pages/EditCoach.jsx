@@ -74,10 +74,10 @@ const EditCoach = () => {
       )}
 
       <div className="bg-gray-800 rounded-lg shadow-2xl p-8 border border-red-900">
-        <CoachForm 
-          initialData={coach} 
-          onSubmit={handleSubmit} 
-          isLoading={isLoading} 
+        <CoachForm
+          initialData={coach}
+          onSubmit={handleSubmit}
+          isLoading={isLoading}
         />
       </div>
     </div>

@@ -52,10 +52,10 @@ function EditPlayer() {
   return (
     <div className="container mx-auto px-4 py-8">
       {player && (
-        <PlayerForm 
-          player={player} 
-          onSubmit={handleSubmit} 
-          isEdit={true} 
+        <PlayerForm
+          player={player}
+          onSubmit={handleSubmit}
+          isEdit={true}
         />
       )}
     </div>

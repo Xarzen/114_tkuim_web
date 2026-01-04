@@ -2,7 +2,6 @@ import axios from 'axios';
 
 const API_URL = 'http://localhost:5001/api';
 
-// 創建 axios 實例
 const api = axios.create({
   baseURL: API_URL,
   headers: {
@@ -10,9 +9,7 @@ const api = axios.create({
   },
 });
 
-// 選手相關 API
 export const playerAPI = {
-  // 取得所有選手
   getAllPlayers: async () => {
     try {
       const response = await api.get('/players');
@@ -22,7 +19,6 @@ export const playerAPI = {
     }
   },
 
-  // 取得單一選手
   getPlayerById: async (id) => {
     try {
       const response = await api.get(`/players/${id}`);
@@ -32,7 +28,6 @@ export const playerAPI = {
     }
   },
 
-  // 新增選手
   createPlayer: async (playerData) => {
     try {
       const response = await api.post('/players', playerData);
@@ -42,7 +37,6 @@ export const playerAPI = {
     }
   },
 
-  // 更新選手
   updatePlayer: async (id, playerData) => {
     try {
       const response = await api.put(`/players/${id}`, playerData);
@@ -52,7 +46,6 @@ export const playerAPI = {
     }
   },
 
-  // 刪除選手
   deletePlayer: async (id) => {
     try {
       const response = await api.delete(`/players/${id}`);
@@ -63,9 +56,7 @@ export const playerAPI = {
   },
 };
 
-// 教練相關 API
 export const coachAPI = {
-  // 取得所有教練
   getAllCoaches: async () => {
     try {
       const response = await api.get('/coaches');
@@ -75,7 +66,6 @@ export const coachAPI = {
     }
   },
 
-  // 取得單一教練
   getCoachById: async (id) => {
     try {
       const response = await api.get(`/coaches/${id}`);
@@ -85,7 +75,6 @@ export const coachAPI = {
     }
   },
 
-  // 新增教練
   createCoach: async (coachData) => {
     try {
       const response = await api.post('/coaches', coachData);
@@ -95,7 +84,6 @@ export const coachAPI = {
     }
   },
 
-  // 更新教練
   updateCoach: async (id, coachData) => {
     try {
       const response = await api.put(`/coaches/${id}`, coachData);
@@ -105,7 +93,6 @@ export const coachAPI = {
     }
   },
 
-  // 刪除教練
   deleteCoach: async (id) => {
     try {
       const response = await api.delete(`/coaches/${id}`);

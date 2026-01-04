@@ -5,7 +5,7 @@
 - **Base URL**: `http://localhost:5001/api`
 - **Content-Type**: `application/json`
 - **認證方式**: 前端 Context 狀態管理（教學用途）
-- **資料庫**: MongoDB (t1_team_db)
+- **資料庫**: MongoDB (cfo_team_db)
 - **字元編碼**: UTF-8
 
 ---

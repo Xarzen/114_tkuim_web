@@ -66,24 +66,24 @@ function PlayerDetail() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* 返回按鈕 */}
+      {}
       <Link to="/" className="inline-flex items-center text-white bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg mb-6 shadow-lg">
         ← 返回選手列表
       </Link>
 
-      {/* 選手詳細資訊 */}
+      {}
       <div className="bg-white rounded-lg shadow-2xl overflow-hidden">
         <div className="md:flex">
-          {/* 照片區 - 緊湊寬度，照片原始尺寸 */}
+          {}
           <div className="md:w-auto flex-shrink-0 flex items-start justify-center bg-gray-900 p-4 md:p-6">
             <img
-              src={player.photoUrl || 'https://via.placeholder.com/300x300?text=Player'}
+              src={player.photoUrl || 'https://via.placeholder.com/300'}
               alt={player.name}
               className="max-w-full h-auto rounded-lg shadow-xl"
             />
           </div>
 
-          {/* 資訊區 */}
+          {}
           <div className="flex-1 p-8">
             <div className="flex justify-between items-start mb-4">
               <div>
@@ -116,7 +116,7 @@ function PlayerDetail() {
               </div>
             </div>
 
-            {/* 介紹 */}
+            {}
             {player.introduction && (
               <div className="mb-6">
                 <h2 className="text-xl font-bold text-gray-800 mb-3">選手介紹</h2>
@@ -126,7 +126,7 @@ function PlayerDetail() {
               </div>
             )}
 
-            {/* 成就 */}
+            {}
             {player.achievements && (
               <div className="mb-6">
                 <h2 className="text-xl font-bold text-gray-800 mb-3">成就/經歷</h2>
@@ -136,7 +136,7 @@ function PlayerDetail() {
               </div>
             )}
 
-            {/* 操作按鈕（僅管理員可見） */}
+            {}
             {isAuthenticated && (
               <div className="flex gap-4 pt-6 border-t border-gray-200">
                 <Link

@@ -15,33 +15,31 @@ function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <Link to="/" className="flex items-center hover:opacity-80 transition">
-            <img 
-              src="/images/t1-icon.svg" 
-              alt="T1 Logo" 
+            <img
+              src="/images/t1-icon.svg"
+              alt="T1 Logo"
               className="h-10 w-auto object-contain"
             />
           </Link>
-          
           <div className="flex items-center space-x-6">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className="hover:text-red-200 transition font-medium"
             >
               首頁
             </Link>
-            <Link 
-              to="/players" 
+            <Link
+              to="/players"
               className="hover:text-red-200 transition font-medium"
             >
               選手列表
             </Link>
-            <Link 
-              to="/coaches" 
+            <Link
+              to="/coaches"
               className="hover:text-red-200 transition font-medium"
             >
               教練團隊
             </Link>
-            
             {isAuthenticated ? (
               <button
                 onClick={handleLogout}

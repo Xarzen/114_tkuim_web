@@ -18,10 +18,10 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="min-h-screen bg-black relative">
-          {/* 背景圖片層 */}
+          {}
           <div className="fixed inset-0 z-0 opacity-30">
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black"></div>
-            <div 
+            <div
               className="absolute inset-0 bg-center bg-no-repeat bg-cover"
               style={{
                 backgroundImage: 'url(/images/t1-background.jpg)',
@@ -29,7 +29,7 @@ function App() {
               }}
             ></div>
           </div>
-          {/* 內容層 */}
+          {}
           <div className="relative z-10">
             <Navbar />
           <Routes>

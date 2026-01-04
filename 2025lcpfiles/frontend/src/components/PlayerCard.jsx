@@ -9,16 +9,15 @@ function PlayerCard({ player, onDelete, showActions = false }) {
 
   return (
     <div className="card">
-      {/* 照片區 - 居中顯示原始尺寸 */}
+      {}
       <div className="flex items-center justify-center bg-gray-900 p-6">
         <img
-          src={player.photoUrl || 'https://via.placeholder.com/300x300?text=Player'}
+          src={player.photoUrl || 'https://via.placeholder.com/300'}
           alt={player.name}
           className="max-w-full h-auto rounded-lg shadow-lg"
           style={{ maxHeight: '250px' }}
         />
       </div>
-      
       <div className="p-6">
         <div className="flex justify-between items-start mb-2">
           <h3 className="text-xl font-bold text-gray-800">{player.name}</h3>
@@ -26,27 +25,22 @@ function PlayerCard({ player, onDelete, showActions = false }) {
             {player.position}
           </span>
         </div>
-        
         <p className="text-gray-600 mb-1">
           <span className="font-semibold">遊戲 ID:</span> {player.gameId}
         </p>
-        
         {player.age && (
           <p className="text-gray-600 mb-1">
             <span className="font-semibold">年齡:</span> {player.age}
           </p>
         )}
-        
         {player.nationality && (
           <p className="text-gray-600 mb-4">
             <span className="font-semibold">國籍:</span> {player.nationality}
           </p>
         )}
-        
         <p className="text-gray-700 mb-4 line-clamp-3">
           {player.introduction || '尚無介紹'}
         </p>
-        
         <div className="flex gap-2">
           <Link
             to={`/player/${player._id}`}

@@ -34,7 +34,7 @@ const CoachForm = ({ initialData, onSubmit, isLoading }) => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* 教練姓名 */}
+        {}
         <div>
           <label htmlFor="name" className="block text-sm font-semibold text-red-400 mb-2">
             教練姓名 *
@@ -51,7 +51,7 @@ const CoachForm = ({ initialData, onSubmit, isLoading }) => {
           />
         </div>
 
-        {/* 遊戲 ID */}
+        {}
         <div>
           <label htmlFor="gameId" className="block text-sm font-semibold text-red-400 mb-2">
             遊戲 ID *
@@ -68,7 +68,7 @@ const CoachForm = ({ initialData, onSubmit, isLoading }) => {
           />
         </div>
 
-        {/* 位置 */}
+        {}
         <div>
           <label htmlFor="position" className="block text-sm font-semibold text-red-400 mb-2">
             位置 *
@@ -86,7 +86,7 @@ const CoachForm = ({ initialData, onSubmit, isLoading }) => {
           </select>
         </div>
 
-        {/* 年齡 */}
+        {}
         <div>
           <label htmlFor="age" className="block text-sm font-semibold text-red-400 mb-2">
             年齡
@@ -103,7 +103,7 @@ const CoachForm = ({ initialData, onSubmit, isLoading }) => {
           />
         </div>
 
-        {/* 國籍 */}
+        {}
         <div>
           <label htmlFor="nationality" className="block text-sm font-semibold text-red-400 mb-2">
             國籍
@@ -119,7 +119,7 @@ const CoachForm = ({ initialData, onSubmit, isLoading }) => {
           />
         </div>
 
-        {/* 照片網址 */}
+        {}
         <div>
           <label htmlFor="photoUrl" className="block text-sm font-semibold text-red-400 mb-2">
             照片網址
@@ -136,7 +136,7 @@ const CoachForm = ({ initialData, onSubmit, isLoading }) => {
         </div>
       </div>
 
-      {/* 介紹 */}
+      {}
       <div>
         <label htmlFor="introduction" className="block text-sm font-semibold text-red-400 mb-2">
           教練介紹
@@ -152,7 +152,7 @@ const CoachForm = ({ initialData, onSubmit, isLoading }) => {
         />
       </div>
 
-      {/* 成就/經歷 */}
+      {}
       <div>
         <label htmlFor="achievements" className="block text-sm font-semibold text-red-400 mb-2">
           成就與經歷
@@ -168,7 +168,7 @@ const CoachForm = ({ initialData, onSubmit, isLoading }) => {
         />
       </div>
 
-      {/* 提交按鈕 */}
+      {}
       <div className="flex justify-end space-x-4">
         <button
           type="button"

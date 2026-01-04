@@ -48,7 +48,7 @@ const CoachList = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* 標題區 */}
+      {}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-white mb-4 drop-shadow-lg">
           T1 教練團隊
@@ -58,7 +58,7 @@ const CoachList = () => {
         </p>
       </div>
 
-      {/* 新增按鈕（僅管理員可見） */}
+      {}
       {isAuthenticated && (
         <div className="mb-8 flex justify-end">
           <Link

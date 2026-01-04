@@ -63,7 +63,7 @@ const CoachDetail = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* 返回按鈕 */}
+      {}
       <Link
         to="/coaches"
         className="inline-flex items-center text-red-400 hover:text-red-300 mb-6 transition-colors"
@@ -71,19 +71,19 @@ const CoachDetail = () => {
         ← 返回教練列表
       </Link>
 
-      {/* 教練詳細資訊 */}
+      {}
       <div className="bg-gray-800 rounded-lg shadow-2xl overflow-hidden border border-red-900">
         <div className="md:flex">
-          {/* 照片區塊 */}
+          {}
           <div className="md:w-auto flex-shrink-0 flex items-start justify-center bg-gray-900 p-4 md:p-6">
             <img
-              src={coach.photoUrl || 'https://via.placeholder.com/300x300?text=Coach'}
+              src={coach.photoUrl || 'https://via.placeholder.com/300'}
               alt={coach.name}
               className="max-w-full h-auto rounded-lg shadow-xl"
             />
           </div>
 
-          {/* 資訊區塊 */}
+          {}
           <div className="p-8 flex-1">
             <div className="flex flex-col sm:flex-row justify-between items-start mb-6">
               <div>
@@ -97,7 +97,7 @@ const CoachDetail = () => {
               </span>
             </div>
 
-            {/* 基本資訊 */}
+            {}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               {coach.nationality && (
                 <div className="bg-gray-900 p-4 rounded-lg border border-gray-700">
@@ -113,7 +113,7 @@ const CoachDetail = () => {
               )}
             </div>
 
-            {/* 介紹 */}
+            {}
             {coach.introduction && (
               <div className="mb-6">
                 <h2 className="text-2xl font-bold text-red-400 mb-3 drop-shadow-lg">
@@ -125,7 +125,7 @@ const CoachDetail = () => {
               </div>
             )}
 
-            {/* 成就與經歷 */}
+            {}
             {coach.achievements && (
               <div className="mb-6">
                 <h2 className="text-2xl font-bold text-red-400 mb-3 drop-shadow-lg">
@@ -137,7 +137,7 @@ const CoachDetail = () => {
               </div>
             )}
 
-            {/* 操作按鈕（僅管理員可見） */}
+            {}
             {isAuthenticated && (
               <div className="flex flex-wrap gap-4 pt-6 border-t border-gray-700">
                 <Link
@@ -158,7 +158,7 @@ const CoachDetail = () => {
         </div>
       </div>
 
-      {/* 刪除確認 Modal */}
+      {}
       {showDeleteModal && (
         <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
           <div className="bg-gray-800 rounded-lg p-6 max-w-md w-full border border-red-900">

@@ -22,7 +22,6 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
       ...prev,
       [name]: value
     }));
-    // 清除該欄位的錯誤訊息
     if (errors[name]) {
       setErrors(prev => ({
         ...prev,
@@ -33,37 +32,29 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
 
   const validate = () => {
     const newErrors = {};
-    
     if (!formData.name.trim()) {
       newErrors.name = '請輸入選手姓名';
     }
-    
     if (!formData.gameId.trim()) {
       newErrors.gameId = '請輸入遊戲 ID';
     }
-    
     if (!formData.position) {
       newErrors.position = '請選擇位置';
     }
-    
     return newErrors;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
-    
-    // 轉換 age 為數字
     const submitData = {
       ...formData,
       age: formData.age ? Number(formData.age) : undefined
     };
-    
     onSubmit(submitData);
   };
 
@@ -73,7 +64,7 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
         {isEdit ? '編輯選手資料' : '新增選手'}
       </h2>
 
-      {/* 選手姓名 */}
+      {}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           選手姓名 <span className="text-red-500">*</span>
@@ -89,7 +80,7 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
         {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
       </div>
 
-      {/* 遊戲 ID */}
+      {}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           遊戲 ID <span className="text-red-500">*</span>
@@ -105,7 +96,7 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
         {errors.gameId && <p className="text-red-500 text-sm mt-1">{errors.gameId}</p>}
       </div>
 
-      {/* 位置 */}
+      {}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           位置 <span className="text-red-500">*</span>
@@ -123,7 +114,7 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
         {errors.position && <p className="text-red-500 text-sm mt-1">{errors.position}</p>}
       </div>
 
-      {/* 年齡 */}
+      {}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           年齡
@@ -139,7 +130,7 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
         />
       </div>
 
-      {/* 國籍 */}
+      {}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           國籍
@@ -154,7 +145,7 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
         />
       </div>
 
-      {/* 照片網址 */}
+      {}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           照片網址
@@ -172,7 +163,7 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
         </p>
       </div>
 
-      {/* 選手介紹 */}
+      {}
       <div className="mb-4">
         <label className="block text-gray-700 font-semibold mb-2">
           選手介紹
@@ -187,7 +178,7 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
         />
       </div>
 
-      {/* 成就/經歷 */}
+      {}
       <div className="mb-6">
         <label className="block text-gray-700 font-semibold mb-2">
           成就/經歷
@@ -202,7 +193,7 @@ function PlayerForm({ player = {}, onSubmit, isEdit = false }) {
         />
       </div>
 
-      {/* 按鈕 */}
+      {}
       <div className="flex gap-4">
         <button
           type="submit"

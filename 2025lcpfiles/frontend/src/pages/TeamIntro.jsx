@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const TeamIntro = () => {
   return (
     <div className="container mx-auto px-4 py-12">
-      {/* 主標題區 */}
+      {}
       <div className="text-center mb-16">
         <h1 className="text-6xl font-bold text-white mb-4 drop-shadow-2xl">
           T1 戰隊
@@ -16,7 +16,7 @@ const TeamIntro = () => {
         </p>
       </div>
 
-      {/* 戰隊介紹 */}
+      {}
       <div className="max-w-4xl mx-auto mb-16">
         <div className="bg-gray-800 rounded-lg shadow-2xl p-8 border border-red-900">
           <h2 className="text-3xl font-bold text-red-400 mb-6 drop-shadow-lg">
@@ -39,7 +39,7 @@ const TeamIntro = () => {
         </div>
       </div>
 
-      {/* 主要成就 */}
+      {}
       <div className="max-w-4xl mx-auto mb-16">
         <div className="bg-gray-800 rounded-lg shadow-2xl p-8 border border-red-900">
           <h2 className="text-3xl font-bold text-red-400 mb-6 drop-shadow-lg">
@@ -66,7 +66,7 @@ const TeamIntro = () => {
         </div>
       </div>
 
-      {/* 快速導航 */}
+      {}
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-white mb-6 text-center drop-shadow-lg">
           探索 T1 團隊
